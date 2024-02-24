@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Obteniendo los 10 primeros (limit)</h3>
+    <ul>
+        {% for limit in limits %}
+        <li>{{ limit.name }} | {{ limit.email }}</li>
+        {% endfor %}
+    </ul>
+    <h3> Obteniendo un unico elemento (filtrado por id) </h3>
+    <ul>
+        {{ author.name }} : {{ author.email }}
+    </ul>
+
+    <h3>Buscando autor donde email = roysmith@example.net</h3>
+    <ul>
+        {% for elm in filtered %}
+        <li>{{ elm.name }} | {{ elm.email }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Lista de todos los autores</h3>
+    <ul>
+        {% for author in authors %}
+        <li>{{ author.name }}  ({{ author.email }})</li>
+        {% endfor %}
+    </ul>
+    <h3>Total de autores {{ authors|length}}</h3>
+</body>
+</html>
