@@ -6,6 +6,30 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Elementos cuyo nombre contiene la palabra "yes" </h3>
+    <ul>
+        {% for ct in contains %}
+        <li> {{ ct.id }} | {{ ct.email }} | {{ ct.name }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Elementos cuyo id es menor o igual a 15 </h3>
+    <ul>
+        {% for fm in filtro_menor %}
+        <li> {{ fm.id }} | {{ fm.email }} | {{ fm.name }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Elementos ordenados por email</h3>
+    <ul>
+        {% for or in orders %}
+        <li>{{ or.email }} | {{ or.name }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Obtener 10 elementos saltando los 5 primero</h3>
+    <ul>
+        {% for of in offsets %}
+        <li>{{ of.name }} | {{ of.email }}</li>
+        {% endfor %}
+    </ul>
     <h3>Obteniendo los 10 primeros (limit)</h3>
     <ul>
         {% for limit in limits %}
